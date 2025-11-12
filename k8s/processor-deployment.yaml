@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: processor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: processor
+  template:
+    metadata:
+      labels:
+        app: processor
+    spec:
+      containers:
+        - name: processor
+          image: <ACR_NAME>.azurecr.io/processor:latest
+          env:
+            - name: STORAGE_ACCOUNT_NAME
+              value: "<STORAGE_ACCOUNT_NAME>"
+            - name: RAW_CONTAINER
+              value: "rawfiles"
+            - name: PROCESSED_CONTAINER
+              value: "processed"
+            - name: QUEUE_NAME
+              value: "jobqueue"

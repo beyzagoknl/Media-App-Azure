@@ -1,0 +1,8 @@
+# Web API
+Flask==3.0.3
+
+# Azure SDKs
+azure-storage-blob==12.19.0
+azure-storage-queue==12.9.0
+azure-identity==1.17.1
+azure-storage-queue==12.9.0

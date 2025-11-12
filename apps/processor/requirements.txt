@@ -1,0 +1,12 @@
+# Web API
+Flask==3.0.3
+
+# Azure SDKs
+azure-storage-blob==12.19.0
+azure-storage-queue==12.9.0
+
+# Logging and utilities
+gunicorn==21.2.0
+
+# Optional: useful for local debugging
+requests==2.32.3
