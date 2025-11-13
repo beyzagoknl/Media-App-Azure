@@ -9,7 +9,6 @@ app = Flask(__name__)
 ACCOUNT_NAME = os.environ["STORAGE_ACCOUNT_NAME"]
 RAW_CONTAINER = os.environ.get("RAW_CONTAINER", "rawfiles")
 
-# Managed Identity ile kimlik doğrulama
 credential = DefaultAzureCredential()
 bsc = BlobServiceClient(
     account_url=f"https://{ACCOUNT_NAME}.blob.core.windows.net",
@@ -25,7 +24,6 @@ def upload():
     if file.filename == "":
         return jsonify({"error": "empty filename"}), 400
 
-    # unique isim oluştur
     name = f"{int(uuid.uuid4().int % 1e10)}-{file.filename}"
     blob = bsc.get_blob_client(container=RAW_CONTAINER, blob=name)
     content_type = file.mimetype or "application/octet-stream"
