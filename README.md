@@ -128,8 +128,4 @@ Terraform automatically creates and binds:
 
 All storage keys are securely injected into Kubernetes as Secrets.
 
-## Author
 
-Beyza Gök
-Custom Software Engineer & Cloud Enthusiast
-Built with Azure, Docker, and Python.
